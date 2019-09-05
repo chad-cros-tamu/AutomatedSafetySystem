@@ -1,0 +1,2 @@
+Retested the code to make sure that it is functioning 
+Began troubleshooting text messaging notification part of code as it only sends message periodically, not event driven

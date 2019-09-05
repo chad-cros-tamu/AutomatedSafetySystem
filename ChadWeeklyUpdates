@@ -1,3 +1,5 @@
 - Week of Sept. 1
     - Purchased new development boards
     - Begun writing firmware to pull from external interfaces (GPIOs)
+    - Created working test to confirm communication between computer and device
+    

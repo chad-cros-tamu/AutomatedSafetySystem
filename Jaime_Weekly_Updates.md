@@ -1,5 +1,5 @@
 # Week of 09/02
-- Accomplished this week:
+## Accomplished this week:
 - Retested the code to make sure that it is functioning
 - Found that text messaging part was not working as intended
 
@@ -9,6 +9,7 @@
 
 
 # Week of 09/09
+## Accomplished this week:
 - Still working on fixing the text messaging issue
 
 ## Objectives for next week:

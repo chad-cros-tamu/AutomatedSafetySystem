@@ -1,8 +1,0 @@
-Week of 09/02
-Accomplished this week:
-Retested the code to make sure that it is functioning
-Found that text messaging part was not working as intended
-
-Working objectives for next week:
-Troubleshoot text messaging notification part of code as it only sends message periodically, not event driven
-Work on first presentation update with the rest of the team

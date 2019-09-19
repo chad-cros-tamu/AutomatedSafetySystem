@@ -4,7 +4,10 @@
     - Created working test to confirm communication between computer and device
     
 - Week of Sept. 9
-    - Finish implementation of beacon.
+    - Finish software implementation of beacon.
+    
+- Week of Sept. 16
+    - Order new bluetooth module.
+    - Order new controller to handle processing of sensors + bt proximity + uploading data to wifi
     - Solder PMIC to beacon via perf. board.
     ( At this point, the beacon solutions is complete, and the next step is to implement the receiver )
-    

@@ -11,3 +11,10 @@
     - Order new controller to handle processing of sensors + bt proximity + uploading data to wifi
     - Solder PMIC to beacon via perf. board.
     ( At this point, the beacon solutions is complete, and the next step is to implement the receiver )
+
+- Week of Sept. 23
+    - Implemented communication between beacon and controller module
+    - Flushed out solution for communicating over WiFi with the webserver hosted by the rPi.
+    - TODO: Need to finish design of controller board PCB. 
+    - To use the MSP430 as the bus master.
+    - Need to address the firmware issues with CC2540

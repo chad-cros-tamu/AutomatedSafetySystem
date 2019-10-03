@@ -18,3 +18,8 @@
     - TODO: Need to finish design of controller board PCB. 
     - To use the MSP430 as the bus master.
     - Need to address the firmware issues with CC2540
+
+- Week of Sept. 30
+    - Submitted PCB for fabrication
+    - Ordered components for the PCB
+    - Wrote some code for SOCKET connection over WiFi

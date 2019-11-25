@@ -1,2 +1,2 @@
-The hardware folder folder is for the hardware designs of the main controller board
-The firmware folder is for the code that runs the 
+The hardware folder folder is for the hardware designs of the main controller board, the light curtain and the proximity sensor
+The firmware folder is for the code that runs the MCU.

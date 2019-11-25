@@ -2,3 +2,14 @@ Week of 09/04: Validation of subsystem from last semster, revise pcb design and 
 presentation and stablish plan for subsystem integration
 Week of 09/04: PCB designn was finalized and submitted to edc for fabrication, after prototype is delivered initial suttering and integartion will be perform
 Week of 09/26: PCB order got delayes due to pcb not fabircating the order. PCB was optimized based on Dr. Lusher Instructions.
+Week of 10/03: PCB could not be fabricated due to limitation in the manufactring capabilities of the the edc. So design was usbmitted to 3rd pary website, intgration planing was started.
+Week of 10/10: PCB was recieved and part were soldered to the board, opartion is not functionaly so cuntinuity and logic testing needs to be performed 
+Week of 10/17: After performing logic and continuity test designed flaws were identified and fixed. Validation was started, however when one of the
+test was about to be run a user error ocurred. The Ref voltage of the pcb was ran with 14V by mistake which led to the lack of functionlaity of the IR sensors.
+New IR sensors have been ordered and will be implemeneted next week.
+Week of 10/24: Sensors recived and implemeneted, individual validation of each of the sensors started and planed to be achieved by next week.
+Week of 10/31: Individual validation has been achieved and integration with MCU started.
+Week of 11/07: Some intagration issues ocurred with MCU due to design flws in the PMIC board design, should be corrected and impleneted by next week
+Week of 11/14: Full integartion with MCU achieved complete system validation started.
+Week of 11/21: System validated and standar wall power source circuitry was implenented (120V, 60Hz). VPS video recorded and sumitted
+Week of 11/24: Final preparaion for final demo done and system was demoed.

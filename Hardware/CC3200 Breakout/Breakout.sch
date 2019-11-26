@@ -1068,13 +1068,6 @@ Source: Samtec TSW.pdf</description>
 </instance>
 </instances>
 <busses>
-<bus name="UART:RX,STATE,TX">
-<segment>
-<wire x1="5.08" y1="5.08" x2="78.74" y2="5.08" width="0.762" layer="92"/>
-<wire x1="5.08" y1="5.08" x2="5.08" y2="22.86" width="0.762" layer="92"/>
-<wire x1="78.74" y1="5.08" x2="78.74" y2="17.78" width="0.762" layer="92"/>
-</segment>
-</bus>
 </busses>
 <nets>
 <net name="NC" class="0">
@@ -1128,46 +1121,16 @@ Source: Samtec TSW.pdf</description>
 <label x="81.28" y="63.5" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="TX" class="0">
-<segment>
-<pinref part="HM10" gate="-4" pin="1"/>
-<wire x1="19.05" y1="25.4" x2="7.62" y2="25.4" width="0.1524" layer="91"/>
-<label x="7.62" y="25.4" size="1.778" layer="95"/>
-<wire x1="7.62" y1="25.4" x2="5.08" y2="22.86" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="P1" gate="-17" pin="1"/>
-<wire x1="66.04" y1="17.78" x2="76.2" y2="17.78" width="0.1524" layer="91"/>
-<label x="66.04" y="17.78" size="1.778" layer="95"/>
-<wire x1="76.2" y1="17.78" x2="78.74" y2="15.24" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="RX" class="0">
-<segment>
-<pinref part="HM10" gate="-5" pin="1"/>
-<wire x1="19.05" y1="22.86" x2="7.62" y2="22.86" width="0.1524" layer="91"/>
-<label x="7.62" y="22.86" size="1.778" layer="95"/>
-<wire x1="7.62" y1="22.86" x2="5.08" y2="20.32" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="P1" gate="-19" pin="1"/>
-<wire x1="66.04" y1="15.24" x2="76.2" y2="15.24" width="0.1524" layer="91"/>
-<label x="66.04" y="15.24" size="1.778" layer="95"/>
-<wire x1="76.2" y1="15.24" x2="78.74" y2="12.7" width="0.1524" layer="91"/>
-</segment>
-</net>
 <net name="STATE" class="0">
 <segment>
 <pinref part="HM10" gate="-6" pin="1"/>
 <wire x1="19.05" y1="20.32" x2="7.62" y2="20.32" width="0.1524" layer="91"/>
 <label x="7.62" y="20.32" size="1.778" layer="95"/>
-<wire x1="7.62" y1="20.32" x2="5.08" y2="17.78" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="P1" gate="-15" pin="1"/>
 <wire x1="66.04" y1="20.32" x2="76.2" y2="20.32" width="0.1524" layer="91"/>
 <label x="66.04" y="20.32" size="1.778" layer="95"/>
-<wire x1="76.2" y1="20.32" x2="78.74" y2="17.78" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="VBUS" class="0">
@@ -1264,6 +1227,30 @@ Source: Samtec TSW.pdf</description>
 <wire x1="27.94" y1="83.82" x2="27.94" y2="88.9" width="0.1524" layer="91"/>
 <wire x1="27.94" y1="88.9" x2="43.18" y2="88.9" width="0.1524" layer="91"/>
 <label x="30.48" y="88.9" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="3200_RX" class="0">
+<segment>
+<pinref part="HM10" gate="-4" pin="1"/>
+<wire x1="19.05" y1="25.4" x2="7.62" y2="25.4" width="0.1524" layer="91"/>
+<label x="7.62" y="25.4" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="P1" gate="-19" pin="1"/>
+<wire x1="66.04" y1="15.24" x2="76.2" y2="15.24" width="0.1524" layer="91"/>
+<label x="66.04" y="15.24" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="3200_TX" class="0">
+<segment>
+<pinref part="HM10" gate="-5" pin="1"/>
+<wire x1="19.05" y1="22.86" x2="7.62" y2="22.86" width="0.1524" layer="91"/>
+<label x="7.62" y="22.86" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="P1" gate="-17" pin="1"/>
+<wire x1="66.04" y1="17.78" x2="76.2" y2="17.78" width="0.1524" layer="91"/>
+<label x="66.04" y="17.78" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>

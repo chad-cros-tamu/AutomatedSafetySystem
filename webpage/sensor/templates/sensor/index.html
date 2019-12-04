@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!--   <meta http-equiv="refresh"/> -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.11/css/mdb.min.css" rel="stylesheet">
+  <link href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <title>AISS Home</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css" />
+</head>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+    <a class="navbar-brand" href="#">AISS</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <a href="{% url 'logout' %}" class="btn btn-secondary">Logout</a>
+      </div>
+    </nav>
+    <div class="container">
+      <section class="hero is-primary" style="background-color:grey">
+        <div class="hero-body">
+          <div class="container">
+            <h1 class="title" style="text-align:center">
+              Automated Industrial Safety System
+            </h1>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <p style="text-align:center" font size = "6">Welcome, the homepage displays the status of the sensors that are currently working</font></p>
+    <p style="text-align:center">A working sensor is displayed with a green background while a nonworking sensors contains a red background</p>
+
+    <!-------Creates Widgets for Sensor Boxes----------------------------------------------------------------------------------------------------------- <-->
+
+    <section class="section">
+    </section>
+
+    <div class="container">
+      <div class="row justify-content-around">
+        {% if light.value == 1 %}
+        <div id="Light_Curtain" class="col-lg" style="padding: 10px;">
+          <div id="light" class="box" style="background-color:lightgreen">
+            <article class="media">
+              <div class="media-content">
+                <div id ='trying' class="content" style="text-align: center;">
+                  <p>
+                    <span class="title" align="center">Sensor:</span>
+                    <br>
+                    <span class="subtitle" style="font-weight:bold">Light Curtain</span>
+                    <br>
+                    <strong style="font-weight:bold"> Status: Working </strong>
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+        {% else %}
+        
+        <form action="submit" method="post" name="submit">
+        </form>
+        <div id="Light_Curtain" class="col-lg" style="padding: 10px;">
+          <div id="light_red" class="box" style="background-color:red">
+            <article class="media">
+              <div class="media-content">
+                <div id='trying' class="content" style="text-align: center;">
+                  <p>
+                    <span class="title" align="center">Sensor:</span>
+                    <br>
+                    <span class="subtitle" style="font-weight:bold">Light Curtain</span>
+                    <br>
+                    <strong style="font-weight:bold"> Status: Not Working </strong>
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+        {% endif %}
+
+        {% if prox1.value == 0 %}
+        <div id="Prox1"  class="col-lg" style="padding: 10px;">
+          <div id="light" class="box" style="background-color:lightgreen">
+            <article class="media">
+              <div class="media-content">
+                <div id ='trying' class="content" style="text-align: center;">
+                  <p>
+                    <span class="title" align="center">Proximity Sensor:</span>
+                    <br>
+                    <span class="subtitle" style="font-weight:bold">Beacon #1</span>
+                    <br>
+                    <strong style="font-weight:bold"> Status: Working </strong>
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+        {% else %}
+        <div id="Prox1" class="col-lg" style="padding: 10px;">
+          <div id="light" class="box" style="background-color:red">
+            <article class="media">
+              <div class="media-content">
+                <div id='trying' class="content" style="text-align: center;">
+                  <p>
+                    <span class="title" align="center">Proximity Sensor:</span>
+                    <br>
+                    <span class="subtitle" style="font-weight:bold">Beacon #1</span>
+                    <br>
+                    <strong style="font-weight:bold"> Status: Not Working </strong>
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+
+        </div>
+        {% endif %}
+
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        {% if switch.value == 1 %}
+        <div id="Switch" class="col-lg" style="padding: 10px;">
+          <div id="thank" class="box" style="background-color:lightgreen">
+            <article class="media">
+              <div class="media-content">
+                <div id='hello' class="content" style="text-align: center;">
+                  <p>
+                    <span class="title" align="center">Sensor:</span>
+                    <br>
+                    <span class="subtitle" style="font-weight:bold">E-Stop Switch</span>
+                    <br>
+                    <strong style="font-weight:bold"> Status: Working </strong>
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+        {% else %}
+        <div id="Switch" class="col-lg" style="padding: 10px;">
+          <div id="thank" class="box" style="background-color:red">
+            <article class="media">
+              <div class="media-content">
+                <div  id='hello' class="content" style="text-align: center;">
+                  <p>
+                    <span class="title" align="center">Sensor:</span>
+                    <br>
+                    <span class="subtitle" style="font-weight:bold">E-Stop Switch</span>
+                    <br>
+                    <strong style="font-weight:bold"> Status: Not Working </strong>
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+        {% endif %}
+
+        {% if prox2.value == 0 %}
+        <div id="Prox2" class="col-lg" style="padding: 10px;">
+          <div id="light" class="box" style="background-color:lightgreen">
+            <article class="media">
+              <div class="media-content">
+                <div id ='trying' class="content" style="text-align: center;">
+                  <p>
+                    <span class="title" align="center">Proximity Sensor:</span>
+                    <br>
+                    <span class="subtitle" style="font-weight:bold">Beacon #2</span>
+                    <br>
+                    <strong style="font-weight:bold"> Status: Working </strong>
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+        {% else %}
+        <div id="Prox2" class="col-lg" style="padding: 10px;">
+          <div id="light" class="box" style="background-color:red">
+            <article class="media">
+              <div class="media-content">
+                <div id='trying' class="content" style="text-align: center;">
+                  <p>
+                    <span class="title" align="center">Proximity Sensor:</span>
+                    <br>
+                    <span class="subtitle" style="font-weight:bold">Beacon #2</span>
+                    <br>
+                    <strong style="font-weight:bold"> Status: Not Working </strong>
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+
+        </div>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        {% if button.value == 1 %}
+        <div id="Button" class="col-lg" style="padding: 10px;">
+          <div id="boxy" class="box" style="background-color:lightgreen">
+            <article class="media">
+              <div class="media-content">
+                <div  id='bye' class="content" style="text-align: center;">
+                  <p>
+                    <span class="title" align="center">Sensor:</span>
+                    <br>
+                    <span class="subtitle" style="font-weight:bold">Door Switch</span>
+                    <br>
+                    <strong style="font-weight:bold"> Status: Working </strong>
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+        {% else %}
+        <div id="Button" class="col-lg" style="padding: 10px;">
+          <div id="boxy" class="box" style="background-color:red">
+            <article class="media">
+              <div class="media-content">
+                <div  id='bye' class="content" style="text-align: center;">
+                  <p>
+                    <span class="title" align="center">Sensor:</span>
+                    <br>
+                    <span class="subtitle" style="font-weight:bold">Door Switch</span>
+                    <br>
+                    <strong style="font-weight:bold"> Status: Not Working </strong>
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+        {% endif %}
+
+
+        {% if prox3.value == 0 %}
+        <div id="Prox3" class="col-lg" style="padding: 10px;">
+          <div id="light" class="box" style="background-color:lightgreen">
+            <article class="media">
+              <div class="media-content">
+                <div id ='trying' class="content" style="text-align: center;">
+                  <p>
+                    <span class="title" align="center">Proximity Sensor:</span>
+                    <br>
+                    <span class="subtitle" style="font-weight:bold">Beacon #3</span>
+                    <br>
+                    <strong style="font-weight:bold"> Status: Working </strong>
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+        {% else %}
+        <div id="Prox3" class="col-lg" style="padding: 10px;">
+
+          <div id="light" class="box" style="background-color:red">
+            <article class="media">
+              <div class="media-content">
+                <div id='trying' class="content" style="text-align: center;">
+                  <p>
+                    <span class="title" align="center">Proximity Sensor:</span>
+                    <br>
+                    <span class="subtitle" style="font-weight:bold">Beacon #3</span>
+                    <br>
+                    <strong style="font-weight:bold"> Status: Not Working </strong>
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+    <section class="section">
+    </section>
+
+
+    <!-- Section for creating the table that displays the changes in the database -->
+
+    <section align="center" style="padding: 15px">
+      <div class="card">
+        <div class="card-body">
+          <h1 class="title d-flex justify-content-center">Proximity Sensors Information</h1>
+          <table id="ProxTable" class="table table-bordered table-striped table-hover">
+            <button id="table_button" type="button" class="btn btn-primary btn-rounded btn-lg m-0"><i class="fas fa-redo-alt"></i>     Refresh Table</button>
+            <caption>List of proximity sensors (Red colour indicates sensor has been triggered)</caption>
+            <thead>
+              <tr>
+                <th class="text-center" scope='col' >First</th>
+                <th class="text-center" scope='col' >Last</th>
+                <th class="text-center" scope='col' >tagID</th>
+                <th class="text-center" scope='col' >status</th>
+                <th class="text-center" scope='col' >DateTime</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $.ajax({
+          url: '{% url 'table_refresh' %}',
+          datatype: 'text json',
+          type: 'GET',
+          success: function(data){
+            console.log('table')
+            var table = $('#ProxTable').DataTable({
+              data: data,
+              columns: [
+              {"data": "first_name"},
+              {"data": "last_name"},
+              {"data": "tagID"},
+              {"data": "status"},
+              {"data": "datetime"},
+              ],
+              "columnDefs": [{"className": "dt-center", "targets": "_all", targets:4, render:function(data){return moment(data).format('MMMM Do YYYY, h:mm:ss a');}}],
+
+              dom: 'Bfrtip',
+              select: true,
+              buttons: [{
+                text: 'Select all',
+                action: function () {
+                  table.rows().select();
+                }
+              },
+              {
+                text: 'Select none',
+                action: function () {
+                  table.rows().deselect();
+                }
+              }
+              ]
+            });
+            $('.dataTables_length').addClass('bs-select');
+          }
+        });
+      });
+
+    </script>
+    <script type="text/javascript">
+      $('#table_button').click(function() {
+        console.log('Table refreshed');
+        $.ajax({
+          url: '{% url 'table_refresh' %}',
+          datatype: 'text json',
+          type: 'GET',
+          success: function(data){
+            console.log('table');
+            table = $('#ProxTable').DataTable({ 
+              destroy: true,
+              paging: false,
+              data: data,
+              columns: [
+              {"data": "first_name"},
+              {"data": "last_name"},
+              {"data": "tagID"},
+              {"data": "status"},
+              {"data": "datetime"},
+              ],
+              "columnDefs": [{"className": "dt-center", "targets": "_all", targets:4, render:function(data){return moment(data).format('MMMM Do YYYY, h:mm:ss a');}}],
+              dom: 'Bfrtip',
+              select: true,
+              buttons: [{
+                text: 'Select all',
+                action: function () {
+                  table.rows().select();
+                }
+              },
+              {
+                text: 'Select none',
+                action: function () {
+                  table.rows().deselect();
+                }
+              }
+              ]
+            });
+            $('.dataTables_length').addClass('bs-select');
+          }
+        });
+      });
+    </script>
+    <!-- ****************************************************************************************  -->
+
+    <section align="center" style="padding: 15px">
+      <div class="card">
+        <div class="card-body">
+          <h1 class="title d-flex justify-content-center">Quick Statistics</h1>
+          <form action='' method='GET'>
+            <button id="chart_button" type="button" class="btn btn-primary btn-rounded btn-lg m-0" href='chart_redraw'><i class="fas fa-redo-alt"></i>     Refresh Stats</button>
+          </form>
+          <div id="cont" style="padding: 25px;"></div>
+        </div>
+      </div>
+    </section>
+
+    <script type="text/javascript">
+      $('#light_red').ready(function() {
+        $.ajax({
+          url: '{% url 'sms' %}',
+          type: 'GET',
+          success: function(data){
+            console.log(data)
+            data
+          }
+
+        });
+
+      });
+    </script>
+
+    <script type="text/javascript">
+      $.ajax({
+        url: '{% url 'sms' %}',
+          //datatype: 'text json',
+          type: 'GET',
+          success: function(data){
+            console.log(data)
+            
+          }
+        });
+      </script>
+      <!-- ****************************************************************************************  -->
+
+      <!-- Footer part of the webpage --> 
+
+      <footer class="footer">
+        <p> Team 11 Automated Industrial Safety System</p>
+        <p> 2019 All Rights Reserved </p>
+      </footer>
+
+      <!-- ****************************************************************************************  -->
+      <script src="https://code.highcharts.com/highcharts.src.js"></script>
+      <script>
+        Highcharts.chart('cont', {{ chart|safe }});
+      </script>
+
+      <script type="text/javascript">
+        $('#chart_button').click(function() {
+          console.log('Stats refreshed');
+          $.ajax({
+            url: '{% url 'chart_redraw' %}',
+            datatype: 'text json',
+            type: 'GET',
+            success: function(data){
+              Highcharts.chart('cont', data);
+            }
+          });
+        });
+      </script>
+
+      <script>
+        function updateSensor(){
+          $('#Light_Curtain').load(location.href + ' #Light_Curtain');
+          $('#Switch').load(location.href + ' #Switch');
+          $('#Button').load(location.href + ' #Button');
+          $('#Prox1').load(location.href + ' #Prox1');
+          $('#Prox2').load(location.href + ' #Prox2');
+          $('#Prox3').load(location.href + ' #Prox3');
+          console.log('udpated');
+        }
+  $(document).ready(setInterval(updateSensor, 500)); //change to 500 for faster (half a sec) response, set to 1 min for testing purposes
+</script>
+
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.11/js/mdb.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+<script type="text/javascript" src="https://media.twiliocdn.com/sdk/js/client/v1.7/twilio.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+
+</body>
+</html>
